@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-  font-family: FantasqueSansMono Nerd Font;
+  font-family: JetbrainsMono Nerd Font;
   font-size: 14px;
   min-height: 0;
 }
@@ -16,7 +16,6 @@
   border-radius: 1rem;
   margin: 2px;
   background-color: @surface0;
-  margin-left: 1rem;
 }
 
 #workspaces button {
@@ -83,6 +82,8 @@
 #custom-music {
   color: @mauve;
   border-radius: 1rem;
+  margin-left: 1rem;
+  
 }
 
 #custom-lock {

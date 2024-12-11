@@ -2,15 +2,23 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 32,
-    "modules-left": [],
+    "modules-left": ["custom/music"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/music","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "sort-by-name": true,
-         "format": " {icon} ",
-         "format-icons": {
-             "default": "",
+       "on-scroll-up": "hyprctl dispatch workspace -1",
+       "on-scroll-down": "hyprctl dispatch workspace +1",
+        "sort-by-name": true,
+        "format": " {icon} ",
+        "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        },
+        "format-icons": {
+            "default": " ",
          },
      },
     "custom/music": {
