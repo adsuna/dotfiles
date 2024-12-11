@@ -84,4 +84,8 @@ element selected {
 
 //@theme "/home/aditya/.local/share/rofi/themes/simple-tokyonight.rasi"
 
-@theme "/home/aditya/.local/share/rofi/themes/squared-nord.rasi"
+//@theme "/home/aditya/.local/share/rofi/themes/squared-nord.rasi"
+
+//@theme "/usr/share/rofi/themes/fancy.rasi"
+
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
