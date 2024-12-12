@@ -16,7 +16,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Mocha",
-    "dark": "One Dark"
+    "dark": "Catppuccin Mocha"
   },
   "lsp": {
     "discord_presence": {
