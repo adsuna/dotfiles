@@ -2,7 +2,7 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 32,
-    "modules-left": ["custom/music"],
+    "modules-left": ["hyprland/window","custom/music"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
@@ -19,8 +19,8 @@
         },
         "format-icons": {
             "default": " ",
-         },
-     },
+        },
+    },
     "custom/music": {
         "format": "  {}",
         "escape": true,
@@ -28,8 +28,92 @@
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
-        "max-length": 20
+        "max-length": 30
     },
+
+
+    "hyprland/window": {
+    "format": "{}",
+    "min-length": 5,
+    "max-length": 30,
+
+
+    // === Window Titles ===
+
+    "rewrite": {
+        // == Desktop ==
+        "": "<span foreground='#89b4fa'> </span> Hyprland",
+
+        // == Terminal ==
+        "~": "  Terminal",
+        "zsh": "  Terminal",
+        "kitty": "  Terminal",
+        "sejjy@archlinux:(.*)": "  Terminal",
+        "(.*)sejjy@archlinux:~": "  Terminal",
+
+        // == Browser ==
+        "(.*)Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> Firefox",
+        "(.*) — Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> Firefox",
+
+        "(.*)Zen Browser": "<span foreground='#cdd6f4'>󰈹 </span> Zen Browser",
+        "(.*) — Zen Browser": "<span foreground='#cdd6f4'>󰈹 </span> $1",
+
+        // == Development ==
+        "(.*) - Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> $1",
+        "(.*)Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> Visual Studio Code",
+
+        "Godot": "<span foreground='#89b4fa'> </span> Godot Engine",
+        "Godot Engine - (.*)": "<span foreground='#89b4fa'> </span> $1",
+        "(.*) - Godot Engine": "<span foreground='#89b4fa'> </span> $1",
+
+
+        // == Media ==
+        "(.*)Spotify Free": "<span foreground='#a6e3a1'> </span> Spotify",
+        "(.*)Spotify Premium": "<span foreground='#a6e3a1'> </span> Spotify Premium",
+
+        "OBS(.*)": "<span foreground='#a6adc8'>󰐌 </span> OBS Studio",
+
+        "VLC media player": "<span foreground='#fab387'>󰕼 </span> VLC Media Player",
+        "(.*) - VLC media player": "<span foreground='#fab387'>󰕼 </span> $1",
+
+        "GNU Image Manipulation Program": "<span foreground='#a6adc8'> </span> GNU Image Manipulation Program",
+
+        "qView": "  qView",
+
+        "(.*).jpg": "  $1.jpg",
+        "(.*).png": "  $1.png",
+        "(.*).svg": "  $1.svg",
+
+        // == Social ==
+        "vesktop": "<span foreground='#89b4fa'> </span> Discord",
+
+        "• Discord(.*)": "Discord$1",
+        "(.*)Discord(.*)": "<span foreground='#89b4fa'> </span> $1Discord$2",
+
+        // == Documents ==
+        "ONLYOFFICE Desktop Editors": "<span foreground='#f38ba8'> </span> OnlyOffice Desktop",
+
+        "(.*).docx": "<span foreground='#89b4fa'> </span> $1.docx",
+        "(.*).xlsx": "<span foreground='#a6e3a1'> </span> $1.xlsx",
+        "(.*).pptx": "<span foreground='#fab387'> </span> $1.pptx",
+        "(.*).pdf": "<span foreground='#f38ba8'> </span> $1.pdf",
+
+        "/": "  File Manager",
+
+        // == System ==
+        "Timeshift-gtk": "<span foreground='#a6e3a1'> </span> Timeshift",
+
+        "Authenticate": "  Authenticate"
+        },
+
+        // === Click actions ===
+        "on-click": "hyprctl dispatch focus_window",
+        "on-middle-click": "hyprctl dispatch kill_window",
+        "on-right-click": "hyprctl dispatch move_window",
+        "on-scroll-up": "hyprctl dispatch window_up",
+        "on-scroll-down": "hyprctl dispatch window_down"
+    },
+
     "clock": {
         "timezone": "Asia/Calcutta",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -41,21 +125,21 @@
         "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
-    
+
     "battery": {
         "states": {
         "full": 100,
         "good": 99,
         "warning": 30,
         "critical": 15
-        },    
+        },
         "format": "{icon} {capacity}%",
         "format-icons": ["󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
         "format-full": "󱃌 {capacity}%",
         "format-warning": "󰁻 {capacity}%",
         "format-critical": "󱃍  {capacity}%",
         "format-charging": "󱘖  {capacity}%",
-    
+
         "on-click-right": "kitty --title 'batstat' bash -c batstat",
         "tooltip-format": "Discharging: {time}",
         "tooltip-format-charging": "Charging: {time}",
