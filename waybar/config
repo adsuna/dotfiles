@@ -98,7 +98,6 @@
         "(.*).pptx": "<span foreground='#fab387'> </span> $1.pptx",
         "(.*).pdf": "<span foreground='#f38ba8'> </span> $1.pdf",
 
-        "/": "  File Manager",
 
         // == System ==
         "Timeshift-gtk": "<span foreground='#a6e3a1'> </span> Timeshift",
