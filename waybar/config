@@ -28,6 +28,7 @@
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
+        "on-right-click": "playerctl next",
         "max-length": 30
     },
 
