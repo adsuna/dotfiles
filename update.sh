@@ -2,7 +2,7 @@
 
 # Define source and destination directories
 CONFIG_DIR="$HOME/.config"
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$HOME/dotfiles/.config"
 
 # Hardcoded list of folders to copy
 folders=("fastfetch" "fish" "hypr" "kitty" "rofi" "waybar" "wlogout" "xdg-desktop-portal" "zed")
