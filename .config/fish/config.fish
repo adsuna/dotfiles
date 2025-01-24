@@ -1,4 +1,4 @@
-if status is-interactive
+ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 function fish_greeting
@@ -9,6 +9,8 @@ alias scan="yay -q"
 alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
 alias dots=~/scripts/dots.sh
+alias ghs="gh copilot suggest"
+
 
 end
 
