@@ -8,7 +8,7 @@ alias yank="yay -S"
 alias scan="yay -q"
 alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
-alias dots=~/scripts/dots.sh
+alias dots=~/dotfiles/update.sh
 alias ghs="gh copilot suggest"
 
 
