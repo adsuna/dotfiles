@@ -5,11 +5,11 @@ function fish_greeting
 
 # Aliases
 alias yank="yay -S"
-alias scan="yay -q"
 alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
 alias dots=~/dotfiles/update.sh
 alias ghs="gh copilot suggest"
+alias ghe="gh copilot explain"
 
 
 end
