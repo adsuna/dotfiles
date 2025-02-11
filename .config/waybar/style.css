@@ -30,12 +30,13 @@
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @mauve;
   border-radius: 1rem;
 }
 
 #custom-music,
 #tray,
+#custom-wifi,
 #backlight,
 #clock,
 #battery,
@@ -48,10 +49,30 @@
   margin: 2px 0;
 }
 
-#clock {
+#bluetooth{
+    color: @mauve;
+    background-color: @surface0;
+    padding: 0.5rem 1rem;
+    margin: 2px 0;
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+* {
+    font-family: 'JetBrainsMono Nerd Font';
+}
+
+#clock{
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
+}
+#custom-wifi{
+  color: @maroon;
+}
+#custom-cpuinfo{
+    color: @sky;
+    border-radius: 1rem;
+    margin-right: 1rem;
 }
 
 #battery {
@@ -81,9 +102,9 @@
 }
 
 #pulseaudio {
-  color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+    color: @maroon;
+    border-radius: 0;
+    margin-left: 0;
 }
 
 #custom-music {

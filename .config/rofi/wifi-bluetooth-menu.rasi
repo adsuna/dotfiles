@@ -10,8 +10,9 @@ configuration {
 
 window {
   enabled:                  true;
-  location:                 north;
-  anchor:                   south;
+  location:                 north east;
+  anchor:                   north east;
+  x-offset:                 -365px;
   y-offset:                 3px;
   width:                    250px;
   fullscreen:               false;

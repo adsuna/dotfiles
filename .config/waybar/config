@@ -4,7 +4,8 @@
     "height": 32,
     "modules-left": ["hyprland/window","custom/music"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+    "modules-right": ["custom/cpuinfo","bluetooth", "custom/wifi","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+
     "hyprland/workspaces": {
        "on-scroll-up": "hyprctl dispatch workspace -1",
        "on-scroll-down": "hyprctl dispatch workspace +1",
@@ -28,7 +29,7 @@
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
-        "on-right-click": "playerctl next",
+        "on-click-right": "playerctl next",
         "max-length": 30
     },
 
@@ -87,7 +88,7 @@
 
         // == Social ==
         "vesktop": "<span foreground='#89b4fa'> </span> Discord",
-
+        "(.*)WebCord(.*)": "<span foreground='#89b4fa'> </span> Discord",
         "• Discord(.*)": "Discord$1",
         "(.*)Discord(.*)": "<span foreground='#89b4fa'> </span> $1Discord$2",
 
@@ -109,7 +110,7 @@
         // === Click actions ===
         "on-click": "hyprctl dispatch focus_window",
         "on-middle-click": "hyprctl dispatch kill_window",
-        "on-right-click": "hyprctl dispatch move_window",
+        "on-click-right": "hyprctl dispatch move_window",
         "on-scroll-up": "hyprctl dispatch window_up",
         "on-scroll-down": "hyprctl dispatch window_down"
     },
@@ -120,6 +121,7 @@
         "format-alt": "  {:%d/%m/%Y}",
         "format": "  {:%H:%M}"
     },
+
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}",
@@ -150,13 +152,56 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
     },
+
+    "bluetooth": {
+        "format": "󰂰",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "format-connected-battery": "󰂱",
+
+        "tooltip-format":
+        "{num_connections} connected",
+        "tooltip-format-disabled":
+        "Bluetooth Disabled",
+        "tooltip-format-connected":
+        "{num_connections} connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected":
+        "{device_alias}",
+        "tooltip-format-enumerate-connected-battery":
+        "{device_alias}: {device_battery_percentage}%",
+
+        "on-click-right": "kitty --title '󰂯  Bluetooth TUI' bash -c bluetui",
+        "interval": 1,
+        "min-length": 1,
+        "max-length": 1
+    },
+
+    "custom/wifi": {
+        "exec": "~/.config/waybar/scripts/wifi-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "tooltip": true,
+        "on-click": "~/.config/waybar/scripts/wifi-menu.sh",
+        "on-click-right": "kitty nmtui"
+    },
+
+    "custom/cpuinfo": {
+        "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 5,
+        "min-length": 8,
+        "max-length": 8
+    },
+
     "custom/lock": {
         "tooltip": false,
         "on-click": "hyprlock",
