@@ -27,10 +27,11 @@
         "escape": true,
         "interval": 5,
         "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
         "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl -a play-pause",
         "on-click-right": "playerctl next",
-        "max-length": 30
+        "max-length": 50
     },
 
 
