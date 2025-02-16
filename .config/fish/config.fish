@@ -19,6 +19,7 @@ alias dots=~/dotfiles/update.sh
 alias ghs="gh copilot suggest"
 alias ghe="gh copilot explain"
 alias reflect="sudo reflector --country in,sg --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias yay="pkill hypridle && yay && hexec hypridle"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
