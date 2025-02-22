@@ -124,10 +124,11 @@
     },
 
     "backlight": {
+        "scroll-step": 5,
         "device": "intel_backlight",
-        "format": "{icon}",
+        "format": "{icon} {percent}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "tooltip-format":"{brightnessctl get}%"
+        "tooltip-format":""
     },
 
     "battery": {
@@ -144,7 +145,7 @@
         "format-critical": "󱃍  {capacity}%",
         "format-charging": "󱘖  {capacity}%",
 
-        "on-click-right": "kitty --title 'batstat' bash -c batstat",
+        "on-click-right": "kitty --class waybar-btop --title 'btop' bash -c btop",
         "tooltip-format": "Discharging: {time}",
         "tooltip-format-charging": "Charging: {time}",
         "interval": 1,
@@ -153,8 +154,9 @@
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
+        "scroll-step": 5, // %, can be a float
+
+        "format": "{icon} {volume}",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
