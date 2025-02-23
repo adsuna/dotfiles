@@ -16,10 +16,7 @@ alias yank="yay -S"
 alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
 alias dots=~/dotfiles/update.sh
-alias ghs="gh copilot suggest"
-alias ghe="gh copilot explain"
 alias reflect="sudo reflector --country in,sg --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
-alias yoy="pkill hypridle"
 alias vencord_install='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 # bun
