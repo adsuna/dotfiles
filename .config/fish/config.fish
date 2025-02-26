@@ -2,6 +2,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+function install_vencord
+    bash -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+end
+
+
 function fish_greeting
 
 end
@@ -17,7 +22,6 @@ alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
 alias dots=~/dotfiles/update.sh
 alias reflect="sudo reflector --country in,sg --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
-alias vencord_install='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
