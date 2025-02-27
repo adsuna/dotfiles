@@ -13,7 +13,7 @@ for folder in "${folders[@]}"; do
     if [ -d "$CONFIG_DIR/$folder" ]; then
         echo "Copying $folder to $DOTFILES_DIR..."
         # Copy the folder recursively to the destination
-        cp -r "$CONFIG_DIR/$folder" "$DOTFILES_DIR/"
+        rsync -av --delete "$CONFIG_DIR/$folder/" "$DOTFILES_DIR/$folder/"
     else
         echo "Folder $folder does not exist in $CONFIG_DIR."
     fi
@@ -32,4 +32,3 @@ git commit -m "updated configs"
 git push
 
 echo "Selected folders copied, committed, and pushed successfully."
-
