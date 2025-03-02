@@ -109,11 +109,8 @@
         },
 
         // === Click actions ===
-        "on-click": "hyprctl dispatch focus_window",
-        "on-middle-click": "hyprctl dispatch kill_window",
-        "on-click-right": "hyprctl dispatch move_window",
-        "on-scroll-up": "hyprctl dispatch window_up",
-        "on-scroll-down": "hyprctl dispatch window_down"
+        "on-click": "rofi -show drun",
+        "on-middle-click": "hyprctl dispatch kill_window"
     },
 
     "clock": {
