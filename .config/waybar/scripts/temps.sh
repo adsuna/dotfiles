@@ -1,61 +1,32 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Get CPU clock speeds
-get_cpu_frequency() {
-  freqlist=$(awk '/cpu MHz/ {print $4}' /proc/cpuinfo)
-  maxfreq=$(sed 's/...$//' /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq)
-  average_freq=$(echo "$freqlist" | tr ' ' '\n' | awk "{sum+=\$1} END {printf \"%.0f/%s MHz\", sum/NR, $maxfreq}")
-  echo "$average_freq"
-}
+# Nerd font icons
+CPU_ICON=""
+GPU_ICON="󰍹"
 
-# Get CPU temperature
-get_cpu_temperature() {
-  temp=$(sensors | awk '/Package id 0/ {print $4}' | awk -F '[+.]' '{print $2}')
-  if [[ -z "$temp" ]]; then
-    temp=$(sensors | awk '/Tctl/ {print $2}' | tr -d '+°C')
-  fi
-  if [[ -z "$temp" ]]; then
-    temp="N/A"
+# Get CPU temp from k10temp-pci-00c3
+CPU_TEMP=$(sensors | awk '/Tctl:/ {gsub("+", ""); print $2}')
+CPU_TEMP=${CPU_TEMP%°C}  # Remove the °C suffix if present
+
+# Get GPU temp using nvidia-smi
+GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader | awk '{print $1}')
+GPU_TEMP=${GPU_TEMP%°C}  # Remove the °C suffix if present
+
+# Function to get color based on temperature
+get_color() {
+  local temp=$1
+  if (( $(echo "$temp < 60" | bc -l) )); then
+    echo "<span color='#00FF00'>$temp°C</span>"  # Green for low temp
+  elif (( $(echo "$temp < 80" | bc -l) )); then
+    echo "<span color='#FFFF00'>$temp°C</span>"  # Yellow for moderate temp
   else
-    temp_f=$(awk "BEGIN {printf \"%.1f\", ($temp * 9 / 5) + 32}")
+    echo "<span color='#FF0000'>$temp°C</span>"  # Red for high temp
   fi
-  echo "${temp:-N/A} ${temp_f:-N/A}"
 }
 
-# Get the corresponding icon based on temperature
-get_temperature_icon() {
-  temp_value=$1
-  if [ "$temp_value" -ge 80 ]; then
-    icon="󰸁" # High temperature
-  elif [ "$temp_value" -ge 70 ]; then
-    icon="󱃂" # Medium temperature
-  elif [ "$temp_value" -ge 60 ]; then
-    icon="󰔏" # Normal temperature
-  else
-    icon="󱃃" # Low temperature
-  fi
-  echo "$icon"
-}
+# Get colored temperature strings
+CPU_TEMP_COLORED=$(get_color $CPU_TEMP)
+GPU_TEMP_COLORED=$(get_color $GPU_TEMP)
 
-# Main script execution
-cpu_frequency=$(get_cpu_frequency)
-read -r temp_info < <(get_cpu_temperature)
-temp=$(echo "$temp_info" | awk '{print $1}')   # Celsius
-temp_f=$(echo "$temp_info" | awk '{print $2}') # Fahrenheit
-
-# Determine the temperature icon
-thermo_icon=$(get_temperature_icon "$temp")
-
-# Set color based on temperature
-if [ "$temp" -ge 80 ]; then
-  # If temperature is >= 80%, set color to #f38ba8
-  text_output="<span color='#f38ba8'>${thermo_icon} ${temp}°C</span>"
-else
-  # Default color
-  text_output="${thermo_icon} ${temp}°C"
-fi
-
-tooltip="Temperature: ${temp_f}°F\nClock Speed: ${cpu_frequency}"
-
-# Module and tooltip
-echo "{\"text\": \"$text_output\", \"tooltip\": \"$tooltip\"}"
+# Output JSON format
+echo -n "{\"text\": \"$CPU_ICON $CPU_TEMP_COLORED  $GPU_ICON $GPU_TEMP_COLORED\"}"
