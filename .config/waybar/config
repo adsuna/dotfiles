@@ -169,7 +169,8 @@
         "format-icons": {
             "default": ["", "", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer set Master toggle"
     },
 
     "bluetooth": {
