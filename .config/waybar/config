@@ -7,20 +7,17 @@
     "modules-right": ["custom/tempinfo","bluetooth", "network","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
 
     "hyprland/workspaces": {
-       "on-scroll-up": "hyprctl dispatch workspace -1",
-       "on-scroll-down": "hyprctl dispatch workspace +1",
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
         "sort-by-name": true,
-        "format": " {icon} ",
+        "format": " {name} ",
         "persistent-workspaces": {
         "1": [],
         "2": [],
         "3": [],
         "4": [],
         "5": [],
-        },
-        "format-icons": {
-            "default": " ",
-        },
+        }
     },
     "custom/music": {
         "format": "  {}",
