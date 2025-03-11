@@ -4,7 +4,7 @@
     "height": 32,
     "modules-left": ["hyprland/window","custom/music"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/tempinfo","bluetooth", "network","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+    "modules-right": ["custom/tempinfo","bluetooth","network","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
 
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace -1",
@@ -16,7 +16,7 @@
         "2": [],
         "3": [],
         "4": [],
-        "5": [],
+        "5": []
         }
     },
     "custom/music": {
@@ -198,13 +198,13 @@
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
-        "interval": 5,
+        "interval": 5
     },
 
     "custom/lock": {
         "tooltip": false,
         "on-click": "hyprlock",
-        "format": "",
+        "format": ""
     },
     "custom/power": {
         "tooltip": false,
