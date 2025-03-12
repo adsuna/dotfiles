@@ -208,7 +208,7 @@
     },
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout &",
+        "on-click": "wlogout -b 2 &",
         "format": "⏻"
     }
 }
