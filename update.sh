@@ -5,7 +5,7 @@ CONFIG_DIR="$HOME/.config"
 DOTFILES_DIR="$HOME/dotfiles/.config"
 
 # Hardcoded list of folders to copy
-folders=("fastfetch" "fish" "hypr" "kitty" "rofi" "waybar" "wlogout" "xdg-desktop-portal" "zed")
+folders=("fastfetch" "btop" "swaync" "fish" "hypr" "kitty" "rofi" "waybar" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
 
 # Loop through the list of folders
 for folder in "${folders[@]}"; do
@@ -23,12 +23,12 @@ done
 cd "$DOTFILES_DIR" || { echo "Failed to navigate to $DOTFILES_DIR"; exit 1; }
 
 # Add changes to git
-git add .
+git add -A
 
 # Commit changes with a default message
 git commit -m "updated configs"
 
 # Push changes to the remote repository
-git push
+git push origin main
 
 echo "Selected folders copied, committed, and pushed successfully."

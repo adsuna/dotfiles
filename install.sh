@@ -7,10 +7,10 @@ DOTFILES_DIR="$HOME/dotfiles"
 copy_files() {
     local src="$1"
     local dest="$2"
-    
+
     # Create destination directory if it doesn't exist
     mkdir -p "$dest"
-    
+
     # Copy the contents (including hidden files) from the source to the destination
     cp -r "$src/." "$dest/"
     echo "Copied files from $src to $dest"
@@ -27,7 +27,7 @@ install_dependencies() {
 
     # Install necessary packages using yay
     yay
-    yay -S --noconfirm fastfetch fish hyprland kitty zoxide pyenv waybar wlogout xdg-desktop-portal-hyprland zed swww input-remapper-git vesktop wl-clipboard cliphist hypridle hyprlock mako rofi-wayland thunar ttf-jetbrains-mono-nerd power-profiles-daemon brightnessctl playerctl hyprshot yad rofi-emoji nwg-look
+    yay -S --noconfirm fastfetch fish qt6ct btop hyprland hyprpicker hyprshot kitty zoxide waybar wlogout xdg-desktop-portal-hyprland xdg-desktop-portal-gtk zed swww discord wl-clipboard cliphist hypridle hyprlock swaync rofi-wayland thunar ttf-jetbrains-mono-nerd power-profiles-daemon brightnessctl playerctl hyprshot yad rofi-emoji nwg-look
 
 
     echo "Dependencies installed!"
@@ -38,4 +38,3 @@ install_dependencies
 
 
 echo "Dotfiles installation complete!"
-
