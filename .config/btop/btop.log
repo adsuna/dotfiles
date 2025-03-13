@@ -407,3 +407,25 @@
 2025/03/12 (21:22:57) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
 2025/03/12 (21:22:57) | WARNING: ROCm SMI: Failed to get VRAM utilization
 2025/03/12 (21:22:57) | WARNING: ROCm SMI: Failed to get PCIe throughput
+
+2025/03/13 (15:30:54) | ===> btop++ v.1.4.0
+2025/03/13 (15:30:54) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/03/13 (15:30:54) | WARNING: ROCm SMI: Failed to get maximum GPU power draw, defaulting to 225W
+2025/03/13 (15:30:54) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+2025/03/13 (15:30:54) | WARNING: ROCm SMI: Failed to get VRAM utilization
+2025/03/13 (15:30:54) | WARNING: ROCm SMI: Failed to get PCIe throughput
+
+2025/03/13 (15:30:58) | ===> btop++ v.1.4.0
+2025/03/13 (15:30:58) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/03/13 (15:30:58) | WARNING: ROCm SMI: Failed to get maximum GPU power draw, defaulting to 225W
+2025/03/13 (15:30:58) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+2025/03/13 (15:30:58) | WARNING: ROCm SMI: Failed to get VRAM utilization
+2025/03/13 (15:30:58) | WARNING: ROCm SMI: Failed to get PCIe throughput
+2025/03/13 (15:30:58) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2025/03/13 (15:31:00) | ===> btop++ v.1.4.0
+2025/03/13 (15:31:00) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2025/03/13 (15:31:00) | WARNING: ROCm SMI: Failed to get maximum GPU power draw, defaulting to 225W
+2025/03/13 (15:31:00) | WARNING: ROCm SMI: Failed to get maximum GPU temperature, defaulting to 110°C
+2025/03/13 (15:31:00) | WARNING: ROCm SMI: Failed to get VRAM utilization
+2025/03/13 (15:31:00) | WARNING: ROCm SMI: Failed to get PCIe throughput
