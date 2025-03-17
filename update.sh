@@ -7,6 +7,15 @@ DOTFILES_DIR="$HOME/dotfiles/.config"
 # Hardcoded list of folders to copy
 folders=("fastfetch" "btop" "swaync" "fish" "hypr" "kitty" "rofi" "hyprpanel" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
 
+# remove any folder in $DOTFILES_DIR that is NOT in the folders array
+for existing_folder in "$DOTFILES_DIR"/*; do
+    folder_name=$(basename "$existing_folder")
+    if [[ ! " ${folders[@]} " =~ " $folder_name " ]]; then
+        echo "Removing $folder_name from $DOTFILES_DIR..."
+        rm -rf "$existing_folder"
+    fi
+done
+
 # Loop through the list of folders
 for folder in "${folders[@]}"; do
     # Check if the folder exists
