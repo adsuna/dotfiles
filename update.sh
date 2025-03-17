@@ -5,7 +5,7 @@ CONFIG_DIR="$HOME/.config"
 DOTFILES_DIR="$HOME/dotfiles/.config"
 
 # Hardcoded list of folders to copy
-folders=("fastfetch" "btop" "swaync" "fish" "hypr" "kitty" "rofi" "hyprpanel" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
+folders=("fastfetch" "btop" "fish" "hypr" "kitty" "rofi" "hyprpanel" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
 
 # remove any folder in $DOTFILES_DIR that is NOT in the folders array
 for existing_folder in "$DOTFILES_DIR"/*; do
