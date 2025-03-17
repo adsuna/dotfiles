@@ -12,7 +12,7 @@
         "source": "endeavouros_small", // search for logos: fastfetch --list-logos or --print-logos
         "padding": {
 	        "top": 1
-	},
+        }
     },
     "display": {
         "separator": "  "

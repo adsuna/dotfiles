@@ -48,7 +48,7 @@ alias yank="yay -S"
 alias yeet="yay -Rns"
 alias hexec="hyprctl dispatch exec"
 alias dots=~/dotfiles/update.sh
-alias reflect="sudo reflector --country in,sg --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias reflect="sudo reflector --country in,sg --age 12 --sort rate --save /etc/pacman.d/mirrorlist"
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

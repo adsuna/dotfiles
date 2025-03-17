@@ -5,7 +5,7 @@ CONFIG_DIR="$HOME/.config"
 DOTFILES_DIR="$HOME/dotfiles/.config"
 
 # Hardcoded list of folders to copy
-folders=("fastfetch" "btop" "swaync" "fish" "hypr" "kitty" "rofi" "waybar" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
+folders=("fastfetch" "btop" "swaync" "fish" "hypr" "kitty" "rofi" "hyprpanel" "wlogout" "xdg-desktop-portal" "qt6ct" "zed")
 
 # Loop through the list of folders
 for folder in "${folders[@]}"; do

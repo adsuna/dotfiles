@@ -27,7 +27,7 @@ install_dependencies() {
 
     # Install necessary packages using yay
     yay
-    yay -S --noconfirm fastfetch fish qt6ct btop hyprland hyprpicker hyprshot kitty zoxide waybar wlogout xdg-desktop-portal-hyprland xdg-desktop-portal-gtk zed swww discord wl-clipboard cliphist hypridle hyprlock swaync rofi-wayland thunar ttf-jetbrains-mono-nerd power-profiles-daemon brightnessctl playerctl hyprshot yad rofi-emoji nwg-look
+    yay -S --noconfirm fastfetch fish qt6ct btop hyprland hyprpicker hyprshot kitty zoxide hyprpanel wlogout xdg-desktop-portal-hyprland xdg-desktop-portal-gtk zed swww discord wl-clipboard cliphist hypridle hyprlock swaync rofi-wayland thunar ttf-jetbrains-mono-nerd power-profiles-daemon brightnessctl playerctl hyprshot yad rofi-emoji nwg-look
 
 
     echo "Dependencies installed!"
