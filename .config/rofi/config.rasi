@@ -1,113 +1,86 @@
+
+configuration {
+	modi:                          "drun";
+    font:                          "JetBrainsMonoNLNerdFont 13";
+    display-drun:                  "";
+	sidebar-mode:                  false;
+    disable-history:               true;
+    levenshtein-sort:              true;
+    fuzzy:                         true;
+}
+
+@theme "/dev/null"
+
 * {
-    font: "JetBrainsMono Nerd Font 10";
-    foreground: #DADAE8;
-    background: #1E1E2E;
-    active-background: #A4B9EF;
-    urgent-background: #E38C8F;
-    selected-background: @active-background;
-    selected-urgent-background: @urgent-background;
-    selected-active-background: @active-background;
-    separatorcolor: @active-background;
-    bordercolor: @active-background;
+	bg:				                #1e1e2e;
+	fg:				                #cdd6f4;
+	button:			             	#45475a;
+	background-color:		        @bg;
+	text-color:			            @fg;
 }
 
 window {
-    background-color: @background;
-    border:           2;
-    border-radius: 10;
-    border-color: @bordercolor;
-    padding:          5;
-    width: 40%;
+    transparency:                   "real";
+    border-radius:                  7px;
+    width:                          40%;
+    y-offset:                       10px;
+    padding:                        20px;
+    location:                       south;
+    border:                         3px 3px 0px 3px;
+    border-color:                   @fg;
 }
-mainbox {
-    border:  0;
-    padding: 0;
-}
-message {
-    border:       0px dash 0px 0px ;
-    border-color: @separatorcolor;
-    padding:      1px ;
-}
-textbox {
-    text-color: @foreground;
-}
-listview {
-    fixed-height: 0;
-    border:       2px dash 0px 0px ;
-    border-color: @bordercolor;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
-    lines: 7;
-}
-element {
-    border:  0;
-    padding: 1px 7px ;
-}
-element.normal.normal {
-    background-color: @background;
-    text-color:       @foreground;
-}
-element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
-}
-element.normal.active {
-    background-color: @active-background;
-    text-color:       @foreground;
-}
-element.selected.normal {
-    background-color: @selected-background;
-    border-radius: 10;
-    text-color:       @background;
-}
-element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @background;
-}
-element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @background;
-}
-element.alternate.normal {
-    background-color: @background;
-    text-color:       @foreground;
-}
-element.alternate.urgent {
-    background-color: @urgent-background;
-    text-color:       @foreground;
-}
-element.alternate.active {
-    background-color: @active-background;
-    text-color:       @foreground;
-}
-button.selected {
-    background-color: @selected-background;
-    text-color:       @foreground;
-}
-inputbar {
-    spacing:    0;
-    text-color: @foreground;
-    padding:    1px ;
-}
-case-indicator {
-    spacing:    0;
-    text-color: @foreground;
-}
-entry {
-    spacing:    0;
-    text-color: @foreground;
-}
+
 prompt {
-    spacing:    0;
-    text-color: @foreground;
+    enabled:                        false;
 }
+
+entry {
+	placeholder:			        "Search";
+	expand:                         true;
+	padding:                        5px 2% 5px 2%;
+	background-color:               @button;
+    placeholder-color:              @fg;
+}
+
 inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+	children: 			            [ prompt, entry ];
+	background-color:               @button;
+	text-color:                     @fg;
+	expand:                         false;
+	border-radius:                  6px;
+	padding:                        8px;
 }
-textbox-prompt-colon {
-    expand:     false;
-    str:        " :";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+
+listview {
+	columns:                        1;
+	lines:	                        8;
+	cycle:                          false;
+	dynamic:                        true;
+	layout:                         vertical;
+}
+
+mainbox {
+	children:                       [ inputbar, listview ];
+	spacing:                       	2%;
+	padding:                        2% 1% 2% 1%;
+}
+
+element {
+	orientation:                    vertical;
+	border-radius:                  0%;
+	padding:                        1% 0% 1.5% 0%;
+}
+
+element-text {
+	expand:                         true;
+	vertical-align:                 0.5;
+	margin:                         0.5% 3% 0% 3%;
+	background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element selected {
+	background-color:               @fg;
+	text-color:                     @bg;
+	border-radius:                  5px;
 }
