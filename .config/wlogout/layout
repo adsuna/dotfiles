@@ -5,6 +5,12 @@
     "keybind" : "l"
 }
 {
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit",
+    "text" : "Logout",
+    "keybind" : "o"
+}
+{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown",

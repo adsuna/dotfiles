@@ -33,7 +33,9 @@ button:focus, button:active, button:hover {
 #suspend {
     background-image: url("icons/suspend.svg");
 }
-
+#logout {
+    background-image: url("icons/logout.svg");
+}
 
 #shutdown {
     background-image: url("icons/shutdown.svg");
