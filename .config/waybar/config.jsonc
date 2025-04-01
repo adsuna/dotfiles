@@ -1,0 +1,207 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 32,
+    "modules-left": ["hyprland/window","custom/music"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["custom/tempinfo","bluetooth","network","pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "sort-by-name": true,
+        "format": " {name} "
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl -a play-pause",
+        "on-click-right": "playerctl next",
+        "max-length": 50
+    },
+
+
+    "hyprland/window": {
+    "format": "{}",
+    "min-length": 5,
+    "max-length": 30,
+
+
+    // === Window Titles ===
+
+    "rewrite": {
+        // == Desktop ==
+        "": "<span foreground='#89b4fa'> </span> Hyprland",
+
+        // == Terminal ==
+        "~": "  Terminal",
+        "zsh": "  Terminal",
+        "foot": "  Terminal",
+        "sejjy@archlinux:(.*)": "  Terminal",
+        "(.*)sejjy@archlinux:~": "  Terminal",
+
+        // == Browser ==
+        "(.*)Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> Firefox",
+        "(.*) — Mozilla Firefox": "<span foreground='#f38ba8'>󰈹 </span> Firefox",
+
+        "(.*)Zen Browser": "<span foreground='#cdd6f4'>󰈹 </span> Zen Browser",
+        "(.*) — Zen Browser": "<span foreground='#cdd6f4'>󰈹 </span> $1",
+
+        // == Development ==
+        "(.*) - Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> $1",
+        "(.*)Visual Studio Code": "<span foreground='#89b4fa'>󰨞 </span> Visual Studio Code",
+
+        "Godot": "<span foreground='#89b4fa'> </span> Godot Engine",
+        "Godot Engine - (.*)": "<span foreground='#89b4fa'> </span> $1",
+        "(.*) - Godot Engine": "<span foreground='#89b4fa'> </span> $1",
+
+
+        // == Media ==
+        "(.*)Spotify Free": "<span foreground='#a6e3a1'> </span> Spotify",
+        "(.*)Spotify Premium": "<span foreground='#a6e3a1'> </span> Spotify Premium",
+
+        "OBS(.*)": "<span foreground='#a6adc8'>󰐌 </span> OBS Studio",
+
+        "VLC media player": "<span foreground='#fab387'>󰕼 </span> VLC Media Player",
+        "(.*) - VLC media player": "<span foreground='#fab387'>󰕼 </span> $1",
+
+        "GNU Image Manipulation Program": "<span foreground='#a6adc8'> </span> GNU Image Manipulation Program",
+
+        "qView": "  qView",
+
+        "(.*).jpg": "  $1.jpg",
+        "(.*).png": "  $1.png",
+        "(.*).svg": "  $1.svg",
+
+        // == Social ==
+        "vesktop": "<span foreground='#89b4fa'> </span> Discord",
+        "(.*)WebCord(.*)": "<span foreground='#89b4fa'> </span> Discord",
+        "• Discord(.*)": "Discord$1",
+        "(.*)Discord(.*)": "<span foreground='#89b4fa'> </span> $1Discord$2",
+
+        // == Documents ==
+        "ONLYOFFICE Desktop Editors": "<span foreground='#f38ba8'> </span> OnlyOffice Desktop",
+
+        "(.*).docx": "<span foreground='#89b4fa'> </span> $1.docx",
+        "(.*).xlsx": "<span foreground='#a6e3a1'> </span> $1.xlsx",
+        "(.*).pptx": "<span foreground='#fab387'> </span> $1.pptx",
+        "(.*).pdf": "<span foreground='#f38ba8'> </span> $1.pdf",
+
+
+        // == System ==
+        "Timeshift-gtk": "<span foreground='#a6e3a1'> </span> Timeshift",
+
+        "Authenticate": "  Authenticate"
+        },
+
+        // === Click actions ===
+        "on-click": "rofi -show drun",
+        "on-middle-click": "hyprctl dispatch kill_window"
+    },
+
+    "clock": {
+        "timezone": "Asia/Calcutta",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "  {:%d/%m/%Y}",
+        "format": "  {:%H:%M}"
+    },
+    "network": {
+        "interval":3,
+        "format": "{icon}",
+        "format-icons": {
+            "wifi": ["󰤟", "󰤥", "󰤨"],
+            "ethernet": ["󰈀"],
+            "disconnected": ["󰤭"]
+        },
+        "on-click": "iwgtk",
+        "tooltip": true,
+        "tooltip-format":"SSID:{essid}\nStrength:{signalStrength}\nDownload:{bandwidthDownBits}\nUpload:{bandwidthUpBits}"
+    },
+    "backlight": {
+        "scroll-step": 5,
+        "device": "intel_backlight",
+        "format": "{icon} {percent}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip-format":""
+    },
+
+    "battery": {
+        "states": {
+        "full": 100,
+        "good": 99,
+        "warning": 30,
+        "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+        "format-full": "󱃌 {capacity}%",
+        "format-warning": "󰁻 {capacity}%",
+        "format-critical": "󱃍  {capacity}%",
+        "format-charging": "󱘖  {capacity}%",
+
+        "on-click-right": "foot --title 'btop' bash -c btop",
+        "tooltip-format": "Discharging: {time}",
+        "tooltip-format-charging": "Charging: {time}",
+        "interval": 1,
+        "min-length": 6,
+        "max-length": 6
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+
+        "format": "{icon} {volume}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer set Master toggle"
+    },
+
+    "bluetooth": {
+        "format": "󰂰",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "format-connected-battery": "󰂱",
+
+        "tooltip-format":
+        "{num_connections} connected",
+        "tooltip-format-disabled":
+        "Bluetooth Disabled",
+        "tooltip-format-connected":
+        "{num_connections} connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected":
+        "{device_alias}",
+        "tooltip-format-enumerate-connected-battery":
+        "{device_alias}: {device_battery_percentage}%",
+
+        "on-click-right": "foot --title 'bluetui' bash -c bluetui",
+        "interval": 1,
+        "min-length": 1,
+        "max-length": 1
+    },
+
+    "custom/tempinfo": {
+        "exec": "~/.config/waybar/scripts/temps.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 5
+    },
+
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "hyprlock",
+        "format": ""
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout -b 2 &",
+        "format": "⏻"
+    }
+}
