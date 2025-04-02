@@ -4,7 +4,6 @@ configuration {
     font:                          "JetBrainsMonoNLNerdFont 13";
     display-drun:                  "";
 	sidebar-mode:                  false;
-    disable-history:               true;
     levenshtein-sort:              true;
     fuzzy:                         true;
 }
