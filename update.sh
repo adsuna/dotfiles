@@ -40,4 +40,3 @@ git commit -m "updated configs"
 # Push changes to the remote repository
 git push origin main
 
-echo "Selected folders copied, committed, and pushed successfully."
