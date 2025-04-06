@@ -117,7 +117,7 @@
             "ethernet": ["󰈀"],
             "disconnected": ["󰤭"]
         },
-        "on-click": "iwgtk",
+        "on-click": "foot nmtui",
         "tooltip": true,
         "tooltip-format":"SSID:{essid}\nStrength:{signalStrength}\nDownload:{bandwidthDownBits}\nUpload:{bandwidthUpBits}"
     },
@@ -201,7 +201,7 @@
     },
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout -b 2 &",
+        "on-click": "wlogout -b 5 &",
         "format": "⏻"
     }
 }
