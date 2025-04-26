@@ -117,7 +117,7 @@
             "ethernet": ["󰈀"],
             "disconnected": ["󰤭"]
         },
-        "on-click": "foot nmtui",
+        "on-click": "better-control -w",
         "tooltip": true,
         "tooltip-format":"SSID:{essid}\nStrength:{signalStrength}\nDownload:{bandwidthDownBits}\nUpload:{bandwidthUpBits}"
     },
@@ -126,7 +126,8 @@
         "device": "intel_backlight",
         "format": "{icon} {percent}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "tooltip-format":""
+        "tooltip-format":"",
+        "on-click": "better-control -d"
     },
 
     "battery": {
@@ -142,7 +143,7 @@
         "format-warning": "󰁻 {capacity}%",
         "format-critical": "󱃍  {capacity}%",
         "format-charging": "󱘖  {capacity}%",
-
+        "on-click":"better-control -B",
         "on-click-right": "foot --title 'btop' bash -c btop",
         "tooltip-format": "Discharging: {time}",
         "tooltip-format-charging": "Charging: {time}",
@@ -180,7 +181,7 @@
         "tooltip-format-enumerate-connected-battery":
         "{device_alias}: {device_battery_percentage}%",
 
-        "on-click-right": "foot --title 'bluetui' bash -c bluetui",
+        "on-click": "better-control -b",
         "interval": 1,
         "min-length": 1,
         "max-length": 1
