@@ -15,11 +15,12 @@ SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_f
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/hydro\x1epatrickf1/fzf\x2efish\x1ecatppuccin/fish\x1ejorgebucaran/autopair\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _hydro_git_136599:main\u2022\x20
-SETUVAR _hydro_git_18667:master\u2022\x20
 SETUVAR _hydro_git_2043:main\x20
 SETUVAR _hydro_git_28838:main\x20\u21911\x20
 SETUVAR _hydro_git_2956:main\x20
 SETUVAR _hydro_git_60923:master\u2022\x20
+SETUVAR _hydro_git_62173:main\u2022\x20
+SETUVAR _hydro_git_62545:main\x20
 SETUVAR _hydro_git_95036:main\x20
 SETUVAR _hydro_git_95037:main\x20
 SETUVAR _hydro_git_96010:main\x20
