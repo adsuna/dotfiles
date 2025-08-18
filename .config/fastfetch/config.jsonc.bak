@@ -1,0 +1,43 @@
+{
+    "logo": {
+      "type":"builtin",
+      "source":"Endeavour_small"
+    },
+    "modules": [
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "packages",
+            "key": " Packages",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "wm",
+            "key":" WM",
+            "keyColor":"magenta",
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 Memory",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "disk",
+            "key": " Disk",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": " Shell",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "uptime",
+            "key": " Uptime",
+            "keyColor": "magenta"
+        }
+    ]
+}

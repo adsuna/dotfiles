@@ -1,0 +1,164 @@
+/* Define color variables */
+@define-color bg-main transparent;
+@define-color fg-main #a0c8f0;
+@define-color bg-alt #0a1c29;
+@define-color fg-invert #f0f8ff;
+@define-color alert #ffb86c;
+
+/* Reset styles */
+* {
+    border: none;
+    min-height: 0;
+    font-family: "VictorMono Nerd Font Bold";
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0;
+}
+
+/* Window background */
+window#waybar {
+    background: @bg-main;
+    border: 0px solid @fg-main;
+    border-radius: 0px;
+}
+
+/* Tooltip styling */
+tooltip {
+    background-color: @bg-alt;
+    border: 2px solid @fg-main;
+    font-size: 2px;
+}
+
+/* New "Window" Box */
+#window {
+    background-color: @bg-alt;
+    color: @fg-main;
+    border: 2px solid @fg-main;
+    margin: 6px 6px 6px 0px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* New "Custom" and "Music" Boxes */
+#custom-music {
+    background-color: @bg-alt;
+    color: @fg-main;
+    border: 2px solid @fg-main;
+    margin: 6px 6px 6px 0px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+tooltip label {
+    margin: 8px;
+    color: @fg-main;
+}
+
+/* Modules */
+#tray,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#network,
+#pulseaudio,
+#language {
+    margin: 6px 6px 6px 0px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+#workspaces {
+    margin: 6px 4px 6px 6px;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 2px 4px;
+    color: @fg-main;
+    background-color: @bg-alt;
+    border: 2px solid @fg-main;
+    border-radius: 4px;
+    margin-right: 2px;
+}
+
+#workspaces button.active {
+    color: @fg-invert;
+    background-color: @fg-main;
+}
+
+#workspaces button.urgent {
+    background-color: @alert;
+    color: @fg-invert;
+    border: 2px solid @alert;
+}
+
+#clock {
+    background-color: @bg-alt;
+    color: @fg-main;
+    border: 2px solid @fg-main;
+    margin: 6px 6px 6px 0px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+#cpu,
+#backlight,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#language {
+    background-color: @bg-alt;
+    border: 2px solid @fg-main;
+    color: @fg-main;
+}
+
+#network {
+    min-width: 80px;
+}
+
+#cpu,
+#backlight,
+#memory,
+#battery,
+#pulseaudio {
+    min-width: 60px;
+}
+
+#cpu.critical,
+#memory.critical {
+    color: @alert;
+    border: 2px solid @alert;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+    color: @alert;
+    border: 2px solid @alert;
+}
+
+#custom-launcher {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 5px;
+    transition: none;
+    color: @fg-main;
+}
+
+#custom-control {
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: none;
+    color: @fg-main;
+}
+
+#language {
+    min-width: 20px;
+}
