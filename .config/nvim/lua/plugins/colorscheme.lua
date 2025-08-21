@@ -16,11 +16,11 @@ return {
                 styles = {
                     bold = true,
                     italic = false,
-                    transparency = false,
+                    transparency = true,
                 },
                 highlight_groups = {
                     ColorColumn = { bg = "#1C1C21" },
-                    -- Normal = { bg = "none" },                      -- Main background remains transparent
+                    Normal = { bg = "none" },                      -- Main background remains transparent
                     Pmenu = { bg = "", fg = "#e0def4" },           -- Completion menu background
                     PmenuSel = { bg = "#4a465d", fg = "#f8f5f2" }, -- Highlighted completion item
                     PmenuSbar = { bg = "#191724" },                -- Scrollbar background
