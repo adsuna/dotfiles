@@ -8,6 +8,7 @@ folders=(
   fish
   foot
   hypr
+  nvim
   fuzzel
   waybar
   wlogout
