@@ -36,7 +36,7 @@ return {
 
             -- HACK: set this on the color you want to be persistent
             -- when quit and reopening nvim
-            vim.cmd("colorscheme rose-pine")
+            vim.cmd("colorscheme kanagawa")
         end,
     },
     -- NOTE: gruvbox
@@ -207,7 +207,6 @@ return {
             local fg_dark = "#B4D0E9"
             local fg_gutter = "#627E97"
             local border = "#547998"
-
             require("tokyonight").setup({
                 style = "night",
                 transparent = transparent,
