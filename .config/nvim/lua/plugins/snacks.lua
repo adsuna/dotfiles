@@ -127,11 +127,11 @@ return {
                     { section = "startup" },
                     {
                         section = "terminal",
-                        cmd = "ascii-image-converter ~/Desktop/Others/profiles.JPG -C -c",
+                        cmd = "",
                         random = 15,
                         pane = 2,
                         indent = 15,
-                        height = 20,
+                        height = 30,
                     },
                 },
             },
