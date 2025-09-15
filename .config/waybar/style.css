@@ -1,9 +1,11 @@
 /* Define color variables */
+/* Define color variables */
 @define-color bg-main transparent;
-@define-color fg-main #a0c8f0;
-@define-color bg-alt #0a1c29;
-@define-color fg-invert #f0f8ff;
-@define-color alert #ffb86c;
+@define-color fg-main #a8b8f0;
+@define-color bg-alt #0f1329;
+@define-color fg-invert #e8f0ff;
+@define-color alert #7c8cff;
+
 
 /* Reset styles */
 * {
