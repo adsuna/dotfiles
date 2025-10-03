@@ -96,6 +96,7 @@
     "format-wifi": "wifi {bandwidthDownBits}",
     "format-ethernet": "enth {bandwidthDownBits}",
     "format-disconnected": "no network",
+    "on-click":"foot nmtui",
     "interval": 5,
     "tooltip": false,
   },
