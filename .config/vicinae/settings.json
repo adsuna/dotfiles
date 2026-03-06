@@ -9,6 +9,7 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
+   "$schema": "https://vicinae.com/schemas/config.json",
    "pop_to_root_on_close": true,
    "fallbacks": [
       "files:search"
@@ -16,6 +17,16 @@
    "providers": {
       "@sovereign/store.vicinae.awww-switcher": {
          "preferences": {
+            "colorGenTool": "none",
+            "gridRows": "4",
+            "postCommand": "cp \"$(swww query | sed 's/.*image: //')\" \"$HOME/Pictures/wallpaper\"",
+            "postProduction": "no",
+            "showImageDetails": true,
+            "toggleVicinaeSetting": true,
+            "transitionDuration": "3",
+            "transitionFPS": "60",
+            "transitionStep": "90",
+            "transitionType": "grow",
             "wallpaperPath": "/home/adsuna/Pictures/Wallpapers"
          }
       },
